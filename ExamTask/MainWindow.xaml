@@ -1,0 +1,209 @@
+﻿<Window x:Class="ExamTask.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ExamTask"
+        
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
+        xmlns:viewmodels="clr-namespace:ExamTask.ViewModels"
+        xmlns:models="clr-namespace:ExamTask.Models"
+        
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <viewmodels:MainViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.Resources>
+            <col:ArrayList x:Key="marks">
+                <sys:String>5 (Perfect)</sys:String>
+                <sys:String>4 (Good)</sys:String>
+                <sys:String>3 (Normal)</sys:String>
+                <sys:String>2 (Bad)</sys:String>
+                <sys:String>1 (Awful)</sys:String>
+            </col:ArrayList>
+        </Grid.Resources>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.6*"/>
+            <ColumnDefinition Width="auto"/> <!--Slider-->
+            <ColumnDefinition Width="0.4*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <!--MENU-->
+        <Menu Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3">
+            <MenuItem Header="File">
+                <MenuItem Command="ApplicationCommands.New"/>
+                <MenuItem Command="ApplicationCommands.Open"/>
+                <MenuItem Command="ApplicationCommands.Save"/>
+                <Separator/>
+                <MenuItem Command="ApplicationCommands.Close"/>
+            </MenuItem>
+            <MenuItem Header="Edit">
+                <MenuItem Command="ApplicationCommands.Undo"/>
+                <MenuItem Command="ApplicationCommands.Redo"/>
+                <Separator/>
+                <MenuItem Header="Find"/>
+                <MenuItem Header="Filtrate"/>
+            </MenuItem>
+        </Menu>
+        <!--IMAGE-->
+        <Border Grid.Column="0" Grid.Row="1" Margin="5" BorderBrush="LightSkyBlue" CornerRadius="5" BorderThickness="2">
+            <Image Source="{Binding SelectedImage.Path, UpdateSourceTrigger=PropertyChanged}" Stretch="UniformToFill" Margin="5"></Image>
+        </Border>
+        <!--SLIDER-->
+        <Slider Grid.Column="1" Grid.Row="1" Margin="3" Orientation="Vertical"
+                TickFrequency="1" IsSnapToTickEnabled="True"
+                TickPlacement="Both" Minimum="0" Maximum="{Binding GetMaxValueForSlider, UpdateSourceTrigger=PropertyChanged}"
+                Value="{Binding Index, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <!--BOTTOM CONTROLS-->
+        <StackPanel Grid.Column="0" Grid.Row="2">
+            <!--FIRST PREVIOUS NEXT LAST-->
+            <Grid Margin="0,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Margin="1" Content="First" Command="{Binding FirstCommand}"></Button>
+                <Button Grid.Column="1" Margin="1" Content="Previous" Command="{Binding PreviousCommand}"></Button>
+                <Button Grid.Column="2" Margin="1" Content="Next" Command="{Binding NextCommand}"></Button>
+                <Button Grid.Column="3" Margin="1" Content="Last" Command="{Binding LastCommand}"></Button>
+            </Grid>
+            <!--TOOLBAR PANNELS-->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <ToolBar Grid.Row="0" Grid.Column="0">
+                    <TextBox Width="100" Text="{Binding ElementName=key,Path=Text, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                    <Button Content="Find" Command="{Binding SearchByNameCommand}" CommandParameter="{Binding ElementName=key,Path=Text}"></Button>
+                </ToolBar>
+                <ToolBar Grid.Row="1" Grid.Column="0">
+                    <Button Grid.Column="0" Margin="1" Content="First" Command="{Binding FirstCommand}"></Button>
+                    <Button Grid.Column="1" Margin="1" Content="Previous" Command="{Binding PreviousCommand}"></Button>
+                    <Button Grid.Column="2" Margin="1" Content="Next" Command="{Binding NextCommand}"></Button>
+                    <Button Grid.Column="3" Margin="1" Content="Last" Command="{Binding LastCommand}"></Button>
+                </ToolBar>
+            </Grid>
+        </StackPanel>
+        <!--SIDE CONTROLS-->
+        <Grid Grid.Column="3" Grid.Row="1" Grid.RowSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <!--IMAGE INFORMATION-->
+            <Expander Grid.Column="0" Grid.Row="0" Header="Image Information"
+                      ExpandDirection="up" VerticalAlignment="Top" Margin="0,5,0,0">
+                <Expander.Triggers>
+                    <EventTrigger RoutedEvent="Expander.Expanded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetName="info" Storyboard.TargetProperty="(StackPanel.LayoutTransform).(ScaleTransform.ScaleY)"
+                                                 Duration="0:0:1" To="1"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                    <EventTrigger RoutedEvent="Expander.Collapsed">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetName="info" Storyboard.TargetProperty="(StackPanel.LayoutTransform).(ScaleTransform.ScaleY)"
+                                                 Duration="0:0:1" To="0"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Expander.Triggers>
+                <StackPanel x:Name="info">
+                    <StackPanel.LayoutTransform>
+                        <ScaleTransform ScaleY="0"/>
+                    </StackPanel.LayoutTransform>
+                    <!--INFORMATION-->
+                    <Border BorderBrush="#01d" BorderThickness="1" CornerRadius="5"  Margin="5">
+                        <StackPanel HorizontalAlignment="Center" Margin="0,10">
+                            <TextBlock Text="Image Information" Margin="0,10,0,20"/>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Grid.Row="0" Grid.Column="0" Text="Name : "/>
+                                <TextBlock Grid.Row="1" Grid.Column="0" Text="Date : "/>
+                                <TextBlock Grid.Row="2" Grid.Column="0" Text="Author : "/>
+                                <!--BINDING AREA INFORMATION-->
+                                <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding SelectedImage.Name}"/>
+                                <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding SelectedImage.Date}"/>
+                                <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding SelectedImage.Author}"/>
+                            </Grid>
+                        </StackPanel>
+                    </Border>
+                    <!--MARK-->
+                    <Border BorderBrush="#01d" BorderThickness="1" CornerRadius="5"  Margin="5">
+                        <StackPanel HorizontalAlignment="Center">
+                            <TextBlock Text="Image mark" Margin="0,10"/>
+                            <ListBox ItemsSource="{StaticResource marks}" SelectedItem="{Binding SelectedImage.Mark, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" BorderThickness="0"/>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </Expander>
+            <!--TABCONTROL FILTER SEARCH-->
+            <StackPanel Grid.Column="1" Grid.Row="0" Margin="0,5,0,0">
+                <!--TABCONTROL-->
+                <TabControl>
+                    <TabItem Header="Tree" IsSelected="True">
+                        <ScrollViewer VerticalScrollBarVisibility="Visible">
+                            <TreeView Margin="10" VerticalAlignment="Stretch" ItemsSource="{Binding Directories}" SelectedItemChanged="TreeView_SelectedItemChanged">
+                                <TreeView.ItemTemplate>
+                                    <HierarchicalDataTemplate ItemsSource="{Binding Images}" DataType="{x:Type viewmodels:ImageInfoViewModel}">
+                                        <Label Content="{Binding DirectoryName}"/>
+                                        <HierarchicalDataTemplate.ItemTemplate>
+                                            <DataTemplate DataType="{x:Type models:ImageInfoModel}">
+                                                <Label Content="{Binding Name}"/>
+                                            </DataTemplate>
+                                        </HierarchicalDataTemplate.ItemTemplate>
+                                    </HierarchicalDataTemplate>
+                                </TreeView.ItemTemplate>
+                            </TreeView>
+                        </ScrollViewer>
+                    </TabItem>
+                    <TabItem Header="List">
+                        <StackPanel Margin="0,20">
+                            <TextBox Text="{Binding SelectedDirectory.DirectoryName}" FontWeight="Bold" FontSize="14" IsEnabled="False"/>
+                            <ListBox ItemsSource="{Binding SelectedDirectory.Images, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                                 SelectedIndex="{Binding Index, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                                 DisplayMemberPath="Name">
+                            </ListBox>
+                        </StackPanel>
+                    </TabItem>
+                </TabControl>
+                <!--FILTER-->
+                <ComboBox Margin="0,5" ItemsSource="{StaticResource marks}" SelectedItem="{Binding MarkFilter}"></ComboBox>
+                <!--FIND-->
+                <GroupBox Margin="0,5" Header="Search">
+                    <StackPanel>
+                        <TextBox x:Name="key" Text=""/>
+                        <Button Content="Find" Command="{Binding SearchByNameCommand}" CommandParameter="{Binding ElementName=key,Path=Text}"></Button>
+                    </StackPanel>
+                </GroupBox>
+            </StackPanel>
+        </Grid>
+        <!--TREEVIEW SELECTION CHANGED invoked by threeview event-->
+        <Button x:Name="treeViewChangedBtn" Grid.Column="3" Grid.Row="2" Visibility="Collapsed" Command="{Binding TreeViewChangedCommand}"/>
+    </Grid>
+</Window>

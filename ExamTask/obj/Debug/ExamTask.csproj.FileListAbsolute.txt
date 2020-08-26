@@ -1,0 +1,48 @@
+C:\DevEnv\C#\WPF\2020.04.15 Examination\ExamTask\ExamTask\bin\Debug\ExamTask.exe.config
+C:\DevEnv\C#\WPF\2020.04.15 Examination\ExamTask\ExamTask\bin\Debug\ExamTask.exe
+C:\DevEnv\C#\WPF\2020.04.15 Examination\ExamTask\ExamTask\bin\Debug\ExamTask.pdb
+C:\DevEnv\C#\WPF\2020.04.15 Examination\ExamTask\ExamTask\obj\Debug\ExamTask.csprojAssemblyReference.cache
+C:\DevEnv\C#\WPF\2020.04.15 Examination\ExamTask\ExamTask\obj\Debug\MainWindow.g.cs
+C:\DevEnv\C#\WPF\2020.04.15 Examination\ExamTask\ExamTask\obj\Debug\App.g.cs
+C:\DevEnv\C#\WPF\2020.04.15 Examination\ExamTask\ExamTask\obj\Debug\ExamTask_MarkupCompile.cache
+C:\DevEnv\C#\WPF\2020.04.15 Examination\ExamTask\ExamTask\obj\Debug\ExamTask_MarkupCompile.lref
+C:\DevEnv\C#\WPF\2020.04.15 Examination\ExamTask\ExamTask\obj\Debug\MainWindow.baml
+C:\DevEnv\C#\WPF\2020.04.15 Examination\ExamTask\ExamTask\obj\Debug\ExamTask.g.resources
+C:\DevEnv\C#\WPF\2020.04.15 Examination\ExamTask\ExamTask\obj\Debug\ExamTask.Properties.Resources.resources
+C:\DevEnv\C#\WPF\2020.04.15 Examination\ExamTask\ExamTask\obj\Debug\ExamTask.csproj.GenerateResource.cache
+C:\DevEnv\C#\WPF\2020.04.15 Examination\ExamTask\ExamTask\obj\Debug\ExamTask.csproj.CoreCompileInputs.cache
+C:\DevEnv\C#\WPF\2020.04.15 Examination\ExamTask\ExamTask\obj\Debug\ExamTask.exe
+C:\DevEnv\C#\WPF\2020.04.15 Examination\ExamTask\ExamTask\obj\Debug\ExamTask.pdb
+C:\DevEnv\C#\WPF\2020.04.15 Examination\ExamTask\ExamTask\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Administrator\Downloads\2020_04_15_Examination_1587036617\ExamTask\ExamTask\bin\Debug\ExamTask.exe.config
+C:\Users\Administrator\Downloads\2020_04_15_Examination_1587036617\ExamTask\ExamTask\bin\Debug\ExamTask.exe
+C:\Users\Administrator\Downloads\2020_04_15_Examination_1587036617\ExamTask\ExamTask\bin\Debug\ExamTask.pdb
+C:\Users\Administrator\Downloads\2020_04_15_Examination_1587036617\ExamTask\ExamTask\obj\Debug\ExamTask.csprojAssemblyReference.cache
+C:\Users\Administrator\Downloads\2020_04_15_Examination_1587036617\ExamTask\ExamTask\obj\Debug\MainWindow.g.cs
+C:\Users\Administrator\Downloads\2020_04_15_Examination_1587036617\ExamTask\ExamTask\obj\Debug\App.g.cs
+C:\Users\Administrator\Downloads\2020_04_15_Examination_1587036617\ExamTask\ExamTask\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Administrator\Downloads\2020_04_15_Examination_1587036617\ExamTask\ExamTask\obj\Debug\ExamTask_MarkupCompile.cache
+C:\Users\Administrator\Downloads\2020_04_15_Examination_1587036617\ExamTask\ExamTask\obj\Debug\ExamTask_MarkupCompile.lref
+C:\Users\Administrator\Downloads\2020_04_15_Examination_1587036617\ExamTask\ExamTask\obj\Debug\MainWindow.baml
+C:\Users\Administrator\Downloads\2020_04_15_Examination_1587036617\ExamTask\ExamTask\obj\Debug\ExamTask.g.resources
+C:\Users\Administrator\Downloads\2020_04_15_Examination_1587036617\ExamTask\ExamTask\obj\Debug\ExamTask.Properties.Resources.resources
+C:\Users\Administrator\Downloads\2020_04_15_Examination_1587036617\ExamTask\ExamTask\obj\Debug\ExamTask.csproj.GenerateResource.cache
+C:\Users\Administrator\Downloads\2020_04_15_Examination_1587036617\ExamTask\ExamTask\obj\Debug\ExamTask.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Downloads\2020_04_15_Examination_1587036617\ExamTask\ExamTask\obj\Debug\ExamTask.exe
+C:\Users\Administrator\Downloads\2020_04_15_Examination_1587036617\ExamTask\ExamTask\obj\Debug\ExamTask.pdb
+C:\Users\Administrator\Downloads\WPF_GH\ExamTask\ExamTask\bin\Debug\ExamTask.exe.config
+C:\Users\Administrator\Downloads\WPF_GH\ExamTask\ExamTask\bin\Debug\ExamTask.exe
+C:\Users\Administrator\Downloads\WPF_GH\ExamTask\ExamTask\bin\Debug\ExamTask.pdb
+C:\Users\Administrator\Downloads\WPF_GH\ExamTask\ExamTask\obj\Debug\ExamTask.csprojAssemblyReference.cache
+C:\Users\Administrator\Downloads\WPF_GH\ExamTask\ExamTask\obj\Debug\MainWindow.g.cs
+C:\Users\Administrator\Downloads\WPF_GH\ExamTask\ExamTask\obj\Debug\App.g.cs
+C:\Users\Administrator\Downloads\WPF_GH\ExamTask\ExamTask\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Administrator\Downloads\WPF_GH\ExamTask\ExamTask\obj\Debug\ExamTask_MarkupCompile.cache
+C:\Users\Administrator\Downloads\WPF_GH\ExamTask\ExamTask\obj\Debug\ExamTask_MarkupCompile.lref
+C:\Users\Administrator\Downloads\WPF_GH\ExamTask\ExamTask\obj\Debug\MainWindow.baml
+C:\Users\Administrator\Downloads\WPF_GH\ExamTask\ExamTask\obj\Debug\ExamTask.g.resources
+C:\Users\Administrator\Downloads\WPF_GH\ExamTask\ExamTask\obj\Debug\ExamTask.Properties.Resources.resources
+C:\Users\Administrator\Downloads\WPF_GH\ExamTask\ExamTask\obj\Debug\ExamTask.csproj.GenerateResource.cache
+C:\Users\Administrator\Downloads\WPF_GH\ExamTask\ExamTask\obj\Debug\ExamTask.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Downloads\WPF_GH\ExamTask\ExamTask\obj\Debug\ExamTask.exe
+C:\Users\Administrator\Downloads\WPF_GH\ExamTask\ExamTask\obj\Debug\ExamTask.pdb
